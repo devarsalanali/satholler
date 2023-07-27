@@ -84,7 +84,7 @@ export default function Navbar() {
 								</li>
 							</ul>
 							<button
-								className="block py-2 pl-3 pr-4 bg-primary-400 rounded-[10px] md:p-2 md:px-3 text-black md:hover:bg-primary-600 text-center"
+								className="block py-2 pl-3 pr-4 bg-primary-400 rounded-[10px] md:p-2 md:px-3 text-black md:hover:bg-primary-600 text-center mx-auto"
 								onClick={() => setWalletModal(!walletModal)}
 							>
 								Apply For Auction
