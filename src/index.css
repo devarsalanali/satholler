@@ -9,19 +9,13 @@
 	src: local("Alro"),
 		url("./assets/fonts/alro-alro-regular-400.woff2") format("woff2");
 }
-@font-face {
-	font-family: "Against";
-	src: local("Against"), url("./assets/fonts/against.woff2") format("woff2");
-}
 .ff-alro {
 	font-family: "Alro", sans-serif;
-}
-.ff-against {
-	font-family: "Against", serif;
 }
 html {
 	background-color: #040b11;
 	color: #fff;
+	scroll-behavior: smooth;
 }
 body {
 	font-family: "Poppins", sans-serif;
