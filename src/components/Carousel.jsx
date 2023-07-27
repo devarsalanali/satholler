@@ -49,8 +49,8 @@ export default function Carousel() {
 	}, [activeIndex])
 
 	return (
-		<div className="main-wrapper relative mt-[10%] mb-10">
-			<div className="wrapper w-[15rem] md:w-[17rem] lg:w-[20rem]">
+		<div className="main-wrapper relative mb-10">
+			<div className="wrapper w-[15rem] md:w-[17rem] lg:w-[22rem]">
 				{/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
 				<AnimatePresence mode="popLayout" initial={false}>
 					{visibleItems.map(item => {
@@ -79,7 +79,11 @@ export default function Carousel() {
 								exit="exit"
 								transition={{ duration: 1 }}
 							>
-								<img src={item.img} alt="" />
+								<img
+									src={item.img}
+									alt=""
+									className="w-full h-full object-fit"
+								/>
 							</motion.div>
 						)
 					})}
@@ -99,7 +103,7 @@ const variants = {
 	},
 	center: ({ position, direction }) => {
 		return {
-			scale: position() === "center" ? 1 : 0.85,
+			scale: position() === "center" ? 1 : 0.9,
 			x: 0,
 			zIndex: getZIndex({ position, direction }),
 			opacity: position() === "center" ? 1 : 0.5,
