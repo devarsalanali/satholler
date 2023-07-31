@@ -35,7 +35,9 @@ export default function UpcomingCard(props) {
 					</div>
 				</div>
 				<div className="footer bg-secondary-200 text-end mt-2 p-2 rounded-lg bg-secondary-300">
-					<Button variant="contained">Coming Soon</Button>
+					<Button variant="contained" disabled={true}>
+						Coming Soon
+					</Button>
 				</div>
 			</div>
 		</div>

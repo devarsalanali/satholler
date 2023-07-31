@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from "../assets/images/Union.svg"
 import { useState } from "react"
-import Modal from "./dialogs/Modal"
-import ConnectWallet from "./cards/ConnectWallet"
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -10,16 +8,12 @@ export default function Navbar() {
 		setIsOpen(!isOpen)
 	}
 
-	const [walletModal, setWalletModal] = useState(false)
 	return (
-		<>
+		<header className="sticky top-0 bg-[#040B11] z-[100]">
 			<nav>
 				<div className="max-w-screen-xl flex flex-wrap md:flex-nowrap items-center justify-between mx-auto p-4 md:justify-between">
 					<Link to="/" className="flex items-center md:me-[5rem]">
 						<img src={logo} className="h-8 mr-3" alt="Auction Logo" />
-						<span className="self-center text-2xl font-semibold whitespace-nowrap">
-							Auction
-						</span>
 					</Link>
 					<button
 						type="button"
@@ -83,27 +77,13 @@ export default function Navbar() {
 									</a>
 								</li>
 							</ul>
-							<button
-								className="block py-2 pl-3 pr-4 bg-primary-400 rounded-[10px] md:p-2 md:px-3 text-black md:hover:bg-primary-600 text-center mx-auto"
-								onClick={() => setWalletModal(!walletModal)}
-							>
-								Apply For Auction
+							<button className="block py-2 pl-3 pr-4 bg-primary-400 rounded-[10px] md:p-2 md:px-3 text-black md:hover:bg-primary-600 text-center mx-auto">
+								<a href="#apply-for-auction">Apply For Auction</a>
 							</button>
 						</div>
 					</div>
 				</div>
 			</nav>
-
-			{/* Modals */}
-			<Modal
-				id="walletModal"
-				isOpen={walletModal}
-				setIsOpen={setWalletModal}
-				title="Connect Wallet"
-				titleProps="lg:text-2xl"
-			>
-				<ConnectWallet />
-			</Modal>
-		</>
+		</header>
 	)
 }

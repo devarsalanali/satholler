@@ -9,12 +9,16 @@ export default function Modal({
 }) {
 	return (
 		<div
-			className={`fixed inset-x-0 inset-y-0 bg-[rgba(0,0,0,0.8)] grid place-content-center z-[100] ${
+			className={`modal fixed inset-x-0 inset-y-0 bg-[rgba(0,0,0,0.8)] grid place-content-center z-[100] ${
 				isOpen ? "grid" : "hidden"
 			}`}
 			id={id}
 			tabIndex="-1"
 			aria-hidden={!isOpen}
+			onClick={e => {
+				if (!e.target.classList.contains("modal")) return
+				setIsOpen(false)
+			}}
 		>
 			<div
 				className={`bg-secondary-500 p-4 w-[500px] max-md:w-full border-[1px] border-primary-800 rounded-lg ${className}`}

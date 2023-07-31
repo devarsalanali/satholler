@@ -21,7 +21,7 @@ import Modal from "../components/dialogs/Modal"
 // Dialogs
 import Participate from "../components/dialogs/Participate"
 import AccordionItem from "../components/accordion/AccordionItem"
-import Info from "../components/cards/Info"
+import Info from "../components/dialogs/Info"
 
 export default function Homepage() {
 	// Countdown to this date
@@ -37,7 +37,7 @@ export default function Homepage() {
 	return (
 		<>
 			<div className="container mx-auto px-4 lg:px-20">
-				<section className="hero mt-10">
+				<section className="hero mt-20 min-h-[50vh]">
 					<div className="grid md:grid-cols-2 gap-5 items-center">
 						<h1 className="ff-alro text-5xl lg:text-7xl font-bold">
 							SatHoller - the first
@@ -46,8 +46,8 @@ export default function Homepage() {
 						<Carousel />
 					</div>
 					<div className="mt-2  lg:mt-5 max-md:text-center">
-						<Button variant="contained" to="/bid-details">
-							Participate Now
+						<Button variant="contained">
+							<a href="#holler-bid">Participate Now</a>
 						</Button>
 						<Button
 							variant="outlined"
@@ -58,9 +58,9 @@ export default function Homepage() {
 						</Button>
 					</div>
 				</section>
-				<section className="my-20">
+				<section className="mt-20 pt-20 mt-[-10]" id="holler-bid">
 					<h3 className="ff-alro text-4xl font-bold text-center mb-8">
-						Holler our your <span className="text-primary-400">bid</span>
+						Holler out your <span className="text-primary-400">bid</span>
 					</h3>
 					<div className="slider">
 						<div className="item overflow-hidden rounded-md h-[25rem] relative after:content=[''] after:absolute after:inset-x-0 after:inset-y-0 after:bg-slate-800 after:opacity-[0.3] after:z-[-1]">
@@ -92,9 +92,10 @@ export default function Homepage() {
 								<div className="text-end max-md:mt-10">
 									<Button
 										variant="contained"
-										onClick={() => {
-											setAuctionModal(true)
-										}}
+										to="/auction/test"
+										// onClick={() => {
+										// 	setAuctionModal(true)
+										// }}
 									>
 										Participate
 									</Button>
@@ -103,16 +104,14 @@ export default function Homepage() {
 						</div>
 					</div>
 				</section>
-				<section className="my-20 pt-10 mt-[-10]" id="bids">
-					<div className="head grid md:grid-cols-3 justify-center md:justify-between max-md:mb-5">
+				<section className="mb-20 pt-10 mt-[-1rem]" id="bids">
+					<div className="head grid md:grid-cols-3 justify-center md:justify-between mb-5">
 						<ToggleSwitch
 							className="max-md:order-2"
 							setActiveTab={setActiveTab}
 							activeTab={activeTab}
 						/>
-						<h3 className="ff-alro text-4xl font-bold text-center mb-8">
-							Participate <span className="text-primary-400">Now</span>
-						</h3>
+						<div></div>
 					</div>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 						{activeTab === "upcoming" ? (
@@ -151,7 +150,10 @@ export default function Homepage() {
 					</div>
 				</section>
 				<section className="my-20 bg-gradient-to-r from-[#0A1919] to-[#266040] p-4 md:p-8 rounded-lg border-[#266040] border-2">
-					<div className="grid md:grid-cols-4">
+					<div
+						className="grid md:grid-cols-4 pt-[10rem] mt-[-10rem]"
+						id="apply-for-auction"
+					>
 						<div className="col col-span-2">
 							<h4 className="text-2xl ff-alro mb-2">Apply For Auction</h4>
 							<p className="text-slate-300">

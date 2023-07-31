@@ -1,7 +1,7 @@
 import placeBid from "../../assets/images/place-bid-item.png"
 import Button from "../Button"
 
-function PlaceBid() {
+function PlaceBid({ setBidPlaced }) {
 	return (
 		<div className="body mt-3">
 			<div className="flex gap-3">
@@ -41,7 +41,11 @@ function PlaceBid() {
 			</div>
 
 			<div className="flex mt-2 text-center">
-				<Button variant="contained" className="w-full">
+				<Button
+					variant="contained"
+					className="w-full"
+					onClick={() => setBidPlaced(true)}
+				>
 					Place bid
 				</Button>
 			</div>

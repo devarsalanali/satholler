@@ -1,7 +1,7 @@
 import placeBid from "../../assets/images/place-bid-item.png"
 import Button from "../Button"
 
-function Participate({ id }) {
+function Participate({ setConfirmParticipate }) {
 	return (
 		<div className="body mt-3">
 			<div className="flex gap-3">
@@ -31,7 +31,11 @@ function Participate({ id }) {
 			</div>
 
 			<div className="flex mt-2 text-center">
-				<Button variant="contained" className="w-full">
+				<Button
+					variant="contained"
+					className="w-full"
+					onClick={() => setConfirmParticipate(true)}
+				>
 					Confirm Participation
 				</Button>
 			</div>

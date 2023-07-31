@@ -4,7 +4,7 @@ import App from "./App.jsx"
 import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Homepage from "./pages/Homepage.jsx"
-import ItemDetails from "./pages/ItemDetails.jsx"
+import AuctionDetails from "./pages/AuctionDetails.jsx"
 
 const router = createBrowserRouter([
 	{
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
 				element: <Homepage />,
 			},
 			{
-				path: "/bid-details",
-				element: <ItemDetails />,
+				path: "/auction/:id",
+				element: <AuctionDetails />,
 			},
 		],
 	},
